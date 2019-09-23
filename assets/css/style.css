@@ -1,89 +1,118 @@
 /* Grid Container */
 .grid {
-	display: grid;
+  display: grid;
 }
 
 .header {
-    grid-area: header;
-    min-height: 50px;
+  grid-area: header;
+  min-height: 50px;
+  line-height: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .logo {
-    grid-area: logo;
-    font-family: "Bebas Neue";
-    color: tomato;
-    font-size: 2rem;
-    padding: 10px;
-}
-
-.logo::before {
-    content: 'LARIFLIX';
+  grid-area: logo;
+  font-family: "Bebas Neue";
+  color: tomato;
+  font-size: 2rem;
+  padding: 15px 0 10px 0;
+  letter-spacing: 0.2rem;
 }
 
 .nav {
-    grid-area: nav;
+  grid-area: nav;
+  font-size: 0.95rem;
 }
 
 .content {
-    grid-area: content;
-    min-height: 600px;
+  grid-area: content;
+  min-height: 600px;
+  background-image: url(../images/posters/stranger-than-fiction-poster-print-clean-version.jpg);
 }
 
 .footer {
-    grid-area: footer;
-    min-height: 100px;
+  grid-area: footer;
+  min-height: 100px;
 }
 
 .grid-template-areas {
-	grid-template-areas:
-		"header"
-		"content"
-		"footer"
-		;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
 }
 
 .grid-template-areas-header {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-areas: "logo nav";
-    color: #fff;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    line-height: 1.2;
-    -webkit-font-smoothing: antialiased;
-    background-color: rgba(10,23,55,0.3);
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-areas: "logo nav";
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgba(10, 23, 55, 0.3);
+}
+
+/* Menu */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 6px 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #e5e5e5;
 }
 
 /* Estilos Gerais */
 @font-face {
-    font-family: "Bebas Neue";
-    src: url(../fonts/bebas_neue/BebasNeue-Regular.ttf);
-}
-
-.item {
-	text-align: center;
-}
-
-.grid {
-	max-width: 100%;
-	margin: 0 auto;
-	border: 1px solid #ccc;
+  font-family: "Bebas Neue";
+  src: url(../fonts/bebas_neue/BebasNeue-Regular.ttf);
 }
 
 h1 {
-	text-align: center;
-	font-size: 1.25em;
-	font-weight: normal;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: normal;
 }
 
 body {
-	font-family: monospace;
-	color: #333;
-	margin: 0px;
-	padding-bottom: 60px;
+  font-family: monospace;
+  color: #333;
+  margin: 0px;
+  padding-bottom: 60px;
 }
 
 body > div:nth-of-type(even) {
-	background: rgba(0,0,0,.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
+.item {
+  text-align: center;
+}
+
+.grid {
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+.v-center {
+    vertical-align: middle;
+}
