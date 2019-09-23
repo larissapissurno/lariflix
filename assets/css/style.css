@@ -8,6 +8,22 @@
     min-height: 50px;
 }
 
+.logo {
+    grid-area: logo;
+    font-family: "Bebas Neue";
+    color: tomato;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.logo::before {
+    content: 'LARIFLIX';
+}
+
+.nav {
+    grid-area: nav;
+}
+
 .content {
     grid-area: content;
     min-height: 600px;
@@ -27,16 +43,25 @@
 }
 
 .grid-template-areas-header {
-    grid-template-areas: 
-        "logo nav nav nav"
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "logo nav";
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgba(10,23,55,0.3);
 }
 
 /* Estilos Gerais */
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(../fonts/bebas_neue/BebasNeue-Regular.ttf);
+}
+
 .item {
-	margin: 5px;
-	background: tomato;
 	text-align: center;
-	font-size: 1.5em;
 }
 
 .grid {
@@ -61,3 +86,4 @@ body {
 body > div:nth-of-type(even) {
 	background: rgba(0,0,0,.03);
 }
+
