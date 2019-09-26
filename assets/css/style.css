@@ -15,7 +15,7 @@
 .logo {
   grid-area: logo;
   font-family: "Bebas Neue";
-  color: #E50914;
+  color: #e50914;
   font-size: 2rem;
   padding: 15px 0 10px 0;
   letter-spacing: 0.2rem;
@@ -118,5 +118,64 @@ body > div:nth-of-type(even) {
 }
 
 .v-center {
-    vertical-align: middle;
+  vertical-align: middle;
 }
+
+.nav-element {
+  float: right;
+  margin-top: -3rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.account-menu-item {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  z-index: 0;
+}
+
+.account-dropdown-button .caret {
+  margin-left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #fff transparent transparent transparent;
+}
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  border: none;
+}
+
+.dropdown {
+  margin-right: 1rem;
+  float: right;
+  margin-top: -3rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(46, 46, 46, 1);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 1rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  font-size: 14px;
+}
+
+.dropdown-content a {
+  color: #ccc;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgba(0,0,0,0.2);}
+
+.dropdown:hover .dropdown-content {display: block;}
