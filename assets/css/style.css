@@ -38,6 +38,9 @@
 .footer {
   grid-area: footer;
   min-height: 100px;
+  background-color: rgba(46, 46, 46, 1);
+  color: #ccc;
+  padding: 2rem;
 }
 
 .grid-template-areas {
@@ -100,7 +103,6 @@ body {
   font-family: monospace;
   color: #333;
   margin: 0px;
-  padding-bottom: 60px;
 }
 
 body > div:nth-of-type(even) {
@@ -114,7 +116,6 @@ body > div:nth-of-type(even) {
 .grid {
   max-width: 100%;
   margin: 0 auto;
-  border: 1px solid #ccc;
 }
 
 .v-center {
