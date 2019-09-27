@@ -1,21 +1,19 @@
 (function () {
-    onInit = function () {
+    'use strict';
+
+    function onInit () {
         applyOpacityWhenScrolling();
     }
 
-    applyOpacityWhenScrolling = function () {
-        $(window).scroll(function () {
-            var scrollTop = $(this).scrollTop();
-    
-            $('.grid-template-areas-header').css({
-                'background-color': function () {
-                    if (window.pageYOffset === 0) {
-                        return 'rgb(46, 46, 46, 0)';
-                    }
-                    
-                    return 'rgb(46, 46, 46, 1)';
-                }
-            });
+    function applyOpacityWhenScrolling() {
+        document.addEventListener('scroll', function(e) {
+            var header = document.getElementsByClassName('grid-template-areas-header')[0];
+            if (window.pageYOffset === 0) {
+                header.style['background-color'] = 'rgb(46, 46, 46, 0)';
+                return;
+            }
+            header.style['background-color'] = 'rgb(46, 46, 46, 1)';
+            return;
         });
     }
 
