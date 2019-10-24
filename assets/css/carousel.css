@@ -5,7 +5,7 @@
     background: #2e2e2e;
     position: absolute;
     bottom: 7rem;
-    opacity: 0.8;
+    opacity: 0.5;
     white-space: nowrap;
     overflow: hidden;
     cursor: grab;
@@ -21,7 +21,6 @@
   }
   
   .carousel-arrow {
-    display: absolute;
     color: #fff;
     padding: 81px 15px;
     position: absolute;
@@ -37,4 +36,8 @@
   .carousel-arrow.right {
     right: 0;
     top: 0;
+  }
+
+  .display-none {
+    display: none;
   }

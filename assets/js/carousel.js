@@ -1,56 +1,61 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    window.Carousel = function() {
-        this.build();
-    }
+  window.Carousel = function() {
+    this.build();
+  }
+  
+  Carousel.prototype.build = function() {
+    const arrowLeft = document.getElementById('carousel-arrow-left');
+    const arrowRight = document.getElementById('carousel-arrow-right');
 
-    Carousel.prototype.build = function() {
-        const arrowLeft = document.getElementById('carousel-arrow-left');
-        const arrowRight = document.getElementById('carousel-arrow-right');
+    arrowLeft.addEventListener('click', function(e) {
+      arrowRight.classList.add('display-none');
+      scrollTo('first-item');
+      arrowLeft.setAttribute('style', 'left: 0;');
+      arrowRight.setAttribute('style', 'right: 0;');
+      arrowRight.classList.remove('display-none');      
+    })
 
-        arrowLeft.addEventListener('click', function(e) {
-            scrollTo('first-item');
-            arrowLeft.setAttribute('style', 'left: 0;');
-            arrowRight.setAttribute('style', 'right: 0;');
-            
-        })
+    arrowRight.addEventListener('click', function(e) {
+      arrowRight.classList.add('display-none');
+      scrollTo('last-item');
 
-        arrowRight.addEventListener('click', function(e) {
-            scrollTo('last-item');
-            const right = calculateRightPosition();
-            const left = calculateLeftPosition();
+      setTimeout(() => {
+        arrowRight.classList.remove('display-none');
 
-            if (!right && !left) return;
+        const right = calculateRightPosition();
+        const left = calculateLeftPosition();
+  
+        if (!right && !left) return;
+  
+        arrowRight.setAttribute('style', `right: -${right}px`);
+        arrowLeft.setAttribute('style', `left: ${left}px`);
+      }, 600);
+    })
+  }
 
-            arrowRight.setAttribute('style', `right: -${right}px`);
-            arrowLeft.setAttribute('style', `left: ${left}px`);
-        })
+  function scrollTo(className) {
+    console.log(`scrooling to: ${className}`);
+    
+    var element = document.getElementsByClassName(className)[0];
+    element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  }
 
-        window.alert('Carousel.prototype.build');
-    }
+  function calculateRightPosition() {
+    const carouselOffsetWidth = document.getElementsByClassName('carousel')[0]
+      .offsetWidth;
+    const positionsArrow = document.getElementById('carousel-arrow-right')
+      .getBoundingClientRect();
 
-    function scrollTo(className) {
-        console.log(`scrooling to: ${className}`);
-        
-        var element = document.getElementsByClassName(className)[0];
-        element.scrollIntoView();
-    }
+    const totalWidth = positionsArrow.left + positionsArrow.width; 
+    return carouselOffsetWidth - totalWidth;
+  }
 
-    function calculateRightPosition() {
-        const carouselOffsetWidth = document.getElementsByClassName('carousel')[0]
-        .offsetWidth;
-        const positionsArrow =  document.getElementById('carousel-arrow-right')
-            .getBoundingClientRect();
+  function calculateLeftPosition() {
+    const positionsArrow = document.getElementById('carousel-arrow-left')
+      .getBoundingClientRect();
 
-        const totalWidth = positionsArrow.left + positionsArrow.width; 
-        return carouselOffsetWidth - totalWidth;
-    }
-
-    function calculateLeftPosition() {
-        const positionsArrow =  document.getElementById('carousel-arrow-left')
-            .getBoundingClientRect();
-
-        return positionsArrow.left * -1;
-    }
+    return positionsArrow.left * -1;
+  }
 })();
