@@ -3,7 +3,11 @@
 
     function onInit () {
         applyOpacityWhenScrolling();
-        var carousel = new Carousel();
+        const config = {
+            carouselClassName: 'carousel',
+            carouselItems: window.carouselItems
+        }
+        var carousel = new Carousel(config);
     }
 
     function applyOpacityWhenScrolling() {

@@ -2,30 +2,31 @@
 .carousel {
     height: 180px;
     width: 100%;
-    background: #2e2e2e;
+    background: rgba(0, 0, 0, 0.58);
     position: absolute;
     bottom: 7rem;
-    opacity: 0.5;
     white-space: nowrap;
     overflow: hidden;
-    cursor: grab;
   }
   
   .carousel-item {
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     background: #fff;
     display: inline-grid;
-    margin: 15px 0;
-    cursor: grab;
+    margin: 0 5px;
+    cursor: pointer;
   }
   
   .carousel-arrow {
     color: #fff;
-    padding: 81px 15px;
     position: absolute;
     background: #000;
     cursor: pointer;
+  }
+
+  .carousel-arrow i {
+    padding: 82px 15px;
   }
   
   .carousel-arrow.left {
