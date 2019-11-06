@@ -34,12 +34,9 @@
         const right = calculateRightPosition();
 
         arrowLeft.setAttribute('style', 'left: 0;');
-        arrowRight.setAttribute('style', 'right: 0;');
+        arrowRight.setAttribute('style', `right: ${right}px;`);
 
-        if (right <= 0) {
-          arrowRight.setAttribute('style', `right: -5px;`);
-        }
-      }, 700);  
+      }, 500);  
     });
   }
 
@@ -59,18 +56,13 @@
         arrowRight.classList.remove('display-none');
 
         const right = calculateRightPosition();
-        const left = calculateLeftPosition();
+        const left = right * -1;
 
-        const arrowRightPosition = arrowRight.getBoundingClientRect();
-        console.table('arrowRight.parentElement.offsetWidth', arrowRight.parentElement.offsetWidth);
-        console.table('right', right);
-        console.table('arrowRightPosition.right', arrowRightPosition.right);
-  
         if (right || left) {
-          arrowRight.setAttribute('style', `right: -${right}px`);
+          arrowRight.setAttribute('style', `right: ${right}px`);
           arrowLeft.setAttribute('style', `left: ${left}px`);
         }
-      }, 700);     
+      }, 500);     
     });
   }
 
@@ -109,20 +101,15 @@
   }
 
   function calculateRightPosition() {
-    const carouselOffsetWidth = document.getElementsByClassName('carousel')[0]
-      .offsetWidth;
-    const positionsArrow = document.getElementById('carousel-arrow-right')
-      .getBoundingClientRect();
+    const arrowRight = document.getElementById('carousel-arrow-right');
 
-    const totalWidth = positionsArrow.left + positionsArrow.width; 
-    return carouselOffsetWidth - totalWidth;
-  }
+    var positions = arrowRight.getBoundingClientRect();
+    var currentPosition = +arrowRight.style.right.replace('px','');
+    var parentWidth = arrowRight.parentElement.offsetWidth;
 
-  function calculateLeftPosition() {
-    const positionsArrow = document.getElementById('carousel-arrow-left')
-      .getBoundingClientRect();
+    const right = currentPosition - (parentWidth - positions.right);
 
-    return positionsArrow.left * -1;
+    return right;
   }
 
   function createArrow(direction) {
