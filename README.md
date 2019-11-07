@@ -6,10 +6,10 @@ A página pode ser do tema que o candidato preferir, devendo apenas seguir e a m
 
 ## Requisitos:
 
-1. Header com logo da aplicação, itens do menu e item de menu do usuário (avatar). O Header deve ter fundo transparente quando o scroll da página estiver no topo e alterar para um fundo opaco quando for realizado o scroll
-3. Um item principal em destaque
-4. Listagem dos itens organizados em Carrossel
-5. Footer contendo informações do desenvolvedor
+- [x] 1. Header com logo da aplicação, itens do menu e item de menu do usuário (avatar). O Header deve ter fundo transparente quando o scroll da página estiver no topo e alterar para um fundo opaco quando for realizado o scroll
+- [x] 3. Um item principal em destaque
+- [x] 4. Listagem dos itens organizados em Carrossel
+- [x] 5. Footer contendo informações do desenvolvedor
 
 ## Será avaliado:
 
