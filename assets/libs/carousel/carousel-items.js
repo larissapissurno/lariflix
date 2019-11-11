@@ -6,19 +6,19 @@ window.carouselItems = [
     url: "stranger-than-fiction-poster-print-clean-version.jpg"
   },
   {
-    url: "death-proof.jpg"
+    url: "orange.jpg"
   },
   {
-    url: "inglorious-basterds.jpg"
+    url: "the-hobbit.jpg"
   },
   {
-    url: "into-the-wild.jpg"
+    url: "mr-robot.jpg"
   },
   {
-    url: "moonrise-kingdom.jpg"
+    url: "2012-moonrise-kingdom-poster.jpg"
   },
   {
-    url: "the-royal-tanembaums.jpg"
+    url: "star-wars.jpg"
   },
   {
     url: "interestelar-cartaz.jpg"
@@ -27,18 +27,18 @@ window.carouselItems = [
     url: "stranger-than-fiction-poster-print-clean-version.jpg"
   },
   {
-    url: "death-proof.jpg"
+    url: "orange.jpg"
   },
   {
-    url: "inglorious-basterds.jpg"
+    url: "the-hobbit.jpg"
   },
   {
-    url: "into-the-wild.jpg"
+    url: "mr-robot.jpg"
   },
   {
-    url: "moonrise-kingdom.jpg"
+    url: "2012-moonrise-kingdom-poster.jpg"
   },
   {
-    url: "the-royal-tanembaums.jpg"
+    url: "star-wars.jpg"
   },
 ];

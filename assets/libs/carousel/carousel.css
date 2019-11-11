@@ -30,11 +30,17 @@
     background: #000;
     cursor: pointer;
     z-index: 999;
-    transition: display 0.5s ease;
+    opacity: 1;
+    transition: opacity 0.1s ease;
+  }
+
+  .carousel-arrow.hide {
+    opacity: 0;
   }
 
   .carousel-arrow i {
     padding: 82px 15px;
+    transition: display 0.5s ease;
   }
   
   .carousel-arrow.left {

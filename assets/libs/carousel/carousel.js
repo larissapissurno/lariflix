@@ -23,13 +23,13 @@
     arrowLeft.addEventListener('click', function(e) {
       const arrowRight = document.getElementById('carousel-arrow-right');
 
-      arrowLeft.classList.add('display-none');
-      arrowRight.classList.add('display-none');
+      arrowLeft.classList.add('hide');
+      arrowRight.classList.add('hide');
       scrollTo('first-item');
       
       setTimeout(() => {
-        arrowLeft.classList.remove('display-none');
-        arrowRight.classList.remove('display-none');
+        arrowLeft.classList.remove('hide');
+        arrowRight.classList.remove('hide');
 
         const right = calculateRightPosition();
 
@@ -47,13 +47,13 @@
     arrowRight.addEventListener('click', function(e) {
       const arrowLeft = document.getElementById('carousel-arrow-left');
       
-      arrowLeft.classList.add('display-none');
-      arrowRight.classList.add('display-none');
+      arrowLeft.classList.add('hide');
+      arrowRight.classList.add('hide');
       scrollTo('last-item');
 
       setTimeout(() => {
-        arrowLeft.classList.remove('display-none');
-        arrowRight.classList.remove('display-none');
+        arrowLeft.classList.remove('hide');
+        arrowRight.classList.remove('hide');
 
         const right = calculateRightPosition();
         const left = right * -1;
@@ -90,6 +90,7 @@
       }
 
       self.carousel.append(carouselItem);
+      setClickEventOnCarouselItem(carouselItem, item.url)
     });
   }
 
@@ -125,5 +126,13 @@
     arrow.append(arrowLeftIcon);
 
     return arrow;
+  }
+
+  function setClickEventOnCarouselItem(carouselItem, url) {
+    const content = document.getElementsByClassName('content')[0];
+
+    carouselItem.addEventListener('click', function(e) {
+      content.style.backgroundImage = `url(./assets/images/posters/${url})`;
+    })
   }
 })();

@@ -30,9 +30,10 @@
   grid-area: content;
   min-height: 1000px;
   background-image: url(../images/posters/interestelar-cartaz.jpg);
-  background-position: center;
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .footer {
