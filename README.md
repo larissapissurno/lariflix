@@ -1,6 +1,6 @@
 # lariflix
 
-Desenvolver uma landing page, baseada na página principal do Youtube Music e Netflix.
+Landing page, baseada na página principal do Youtube Music e Netflix.
 
 A página pode ser do tema que o candidato preferir, devendo apenas seguir e a mesma estrutura visual e contendo os itens apresentados nos requisitos a seguir.
 
