@@ -202,7 +202,25 @@ const object = Object.create()
 ---
 
 **16. Escreva um código para inserir e resgatar items do LocalStorage/SessionStorage**
+````javascript
+function criarItens() {
+    const identificador = Math.floor((Math.random() * 100) + 1);
+    localStorage.setItem('idLocalStorage', identificador);
+    sessionStorage.setItem('idSessionStorage', identificador * 2);
+}
 
+function imprimirItens() {
+    const idLocalStorage = localStorage.getItem('idLocalStorage');
+    const idSessionStorage = sessionStorage.getItem('idSessionStorage');
+
+    console.log('idLocalStorage', idLocalStorage);
+    console.log('idSessionStorage', idSessionStorage);
+}
+
+criarItens();
+imprimirItens();
+
+````
 ---
 
 **17. Qual a melhor forma para definir um cookie utilizando javascript ?**
@@ -221,7 +239,7 @@ const object = Object.create()
 
  - [ ] window
  - [ ] global
- - [ ] undefined
+ - [x] undefined
  - [ ] null
 
 ---
