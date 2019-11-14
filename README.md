@@ -154,7 +154,7 @@ document.getElementById("idDoElemento").removeEventListener("click", function() 
 ---
 
 **8. Descreva com suas palavras o que é event bubbling?**
-- **R:** Event bubbling ocorre quando eventos 'borbulham' (são disparados) do elemento de menor hierarquia para o elementos ancestrais em ordem crescente de hierarquia.
+- **R:** Event bubbling ocorre quando eventos 'borbulham' (são disparados) do elemento de menor hierarquia para os elementos ancestrais em ordem crescente de hierarquia.
 
 ````html
 <div style="border: 1px solid red;" onclick="alert('Evento disparado, mesmo clicando no elemento filho.')">
@@ -174,7 +174,7 @@ const object = new Object()
 const object = Object.create()
 ```
 
-- **R:** O operador ``{}`` é utilizado para a criação de objetos literais. Tanto ``Object.create`` quanto ``new Object`` são utilizados para criar novas instâncias de objetos, a diferença entre eles é que ao contrário do ``new Object``, o ``Object.create`` não executa a função construtora do objeto.
+- **R:** O operador ``{}`` é utilizado para a criação de objetos literais, enquanto  ``Object.create`` e ``new Object`` são utilizados para criar novas instâncias de objetos, a diferença entre eles é que ao contrário do ``new Object``, o ``Object.create`` não executa a função construtora do objeto.
 ---
 
 **10. Qual a diferença no uso de XMLHttpRequest e Fetch ? E qual devemos usar atualmente ?**
