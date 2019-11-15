@@ -197,10 +197,16 @@ new Promise(function(resolve, reject) {
 ---
 
 **12. Liste 3 formas de iterar um Array em javascript e explique a diferença entre cada um deles?**
+- ``for``: iteração simples, onde inicializamos uma variável que é incrementada ou decrementada, utilizada para acessar elementos de um array atravéz de seu índice;
+- ``for...in``: laço onde em cada iteração, temos acesso a propriedade do elemento presente na array; 
+- ``for...of``: laço onde em cada iteração, temos acesso ao **valor** da propriedade do elemento presente na array; 
 
 ---
 
 **13. Quando utilizar map, reduce ou filter ?**
+- ``map``: quando queremos criar outra lista com elementos formatados
+- ``reduce``: quando queremos utilizar cada elemento de um array para criar um objeto/valor final
+- ``filter``: quando queremos filtrar elementos de uma lista;
 
 ---
 
