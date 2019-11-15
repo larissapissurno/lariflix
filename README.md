@@ -178,10 +178,21 @@ const object = Object.create()
 ---
 
 **10. Qual a diferença no uso de XMLHttpRequest e Fetch ? E qual devemos usar atualmente ?**
+- **R:** Com Fetch, podemos escrever requisições com menos código, mais simples e elegantes. Além disso, a Fetch API tem algumas features extras que são: 
+	- Utilização de Cache API 
+	- Requisições ``no-cors``(assim podemos receber respostas de servidores que não implementam CORS
+	
+- Por Fetch ser uma tecnologia relativamente nova e não fornecer todas as funcionalidades do XHR, eu optaria por ainda utilizar o XHR.
 
 ---
 
 **11. O que são Promises ? Como podemos declarar uma promise em javascript ?**
+- **R:** Promise é um objeto que nos permite trabalhar com javascript de forma assíncrona. Podemos declarar uma promise da seguinte forma: 
+````javascript
+new Promise(function(resolve, reject) {
+	// podemos chamar resolve() para resolver a promise ou reject() para rejeitá-la
+});
+````
 
 ---
 
