@@ -244,15 +244,15 @@ imprimirItens();
 ---
 
 **17. Qual a melhor forma para definir um cookie utilizando javascript ?**
-
+- **R:** A melhor forma é utilizar ``document.cookie`` passando uma string com as informações: ``"chave={chave}; expires={data para expirar}; path={caminho}";``
 ---
 
 **18. Quais os tipos de Loops existentes em javascript ?**
-
+- **R:** for, for..in, for..of, while, map, filter, reduce; 
 ---
 
 **19. Descreva com suas palavras o que é hoisting ?**
-
+- **R:** é um comportamento do javascript que eleva a declaração de uma propriedade para o topo do escopo;
 ---
 
 **20. Em um ambiente do browser. Qual o valor do this utilizando "use-strict";**
