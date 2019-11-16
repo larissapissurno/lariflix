@@ -11,7 +11,7 @@ A página pode ser do tema que o candidato preferir, devendo apenas seguir e a m
 - [x] 4. Listagem dos itens organizados em Carrossel
 - [x] 5. Footer contendo informações do desenvolvedor
 
-### Perguntas/Respostas de Javascript
+### Perguntas e Respostas de Javascript
 
 **1. Explique com suas palavras a diferença entre a utilização de var, const e let**
 
