@@ -211,11 +211,14 @@ new Promise(function(resolve, reject) {
 ---
 
 **14. Qual o método do Array é mais indicado para remover elementos ?**
-
+- **R:** ``splice()``
 ---
 
 **15. Cite 4 métodos presentes na API de strings do Javascript e explique cada um deles;**
-
+- ``replace()``: encontra e substitui substrings de uma string;
+- ``includes()``: verifica se uma string encontra-se dentro de outra string;
+- ``trim()``: remove espaços em branco no início e no fim da string;
+- ``split()``: separa uma string em uma array de strings com base em uma substring informada por parametro;
 ---
 
 **16. Escreva um código para inserir e resgatar items do LocalStorage/SessionStorage**
