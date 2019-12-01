@@ -1,57 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Lariflix</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='assets/libs/carousel/carousel.css'>
-    <link href="assets/fonts/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
-</head>
-<body>
-    <section class="grid grid-template-areas">
-        <div class="item header grid-template-areas-header">
-            <div class="item logo">
-                <span class="v-center">LARIFLIX</span>
-            </div>
-            <div class="item nav">
-                <ul>
-                    <li><a class="active" href="#home">Início</a></li>
-                    <li><a href="#series">Séries</a></li>
-                    <li><a href="#filmes">Filmes</a></li>
-                    <li><a href="#favoritos">Favoritos</a></li>
-                    <li><a href="#adicionadosRecentemente">Adicionados recentemente</a></li>
-                </ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="assets/libs/carousel/carousel.css"
+    />
+    <link
+      href="assets/fonts/fontawesome-free-5.11.2-web/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
 
-                <div class="dropdown">
-                    <div class="account-dropdown-button">
-                        <a href="#" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Larissa Pissurno - Conta e Configurações">
-                            <span class="profile-link" role="presentation">
-                                <img class="profile-icon" src="https://occ-0-2359-185.1.nflxso.net/art/ee3c8/47bd050697b5fd86a1ec241e6829786d498ee3c8.png" alt="">
-                            </span>
-                        </a>
-                        <span class="caret" role="presentation"></span>
-                    </div>
-                    <div class="dropdown-content">
-                        <a href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a>
-                        <a href="#"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Minha conta</a>
-                    </div>
-                </div>
-            </div>
+  <body class="grid grid-template-areas">
+    <nav class="item header grid-template-areas-header">
+      <div class="item logo">
+        <span class="v-center">LARIFLIX</span>
+      </div>
+      <div class="item nav">
+        <ul>
+          <li><a class="active" href="#home">Início</a></li>
+          <li><a href="#series">Séries</a></li>
+          <li><a href="#filmes">Filmes</a></li>
+          <li><a href="#favoritos">Favoritos</a></li>
+          <li>
+            <a href="#adicionadosRecentemente">Adicionados recentemente</a>
+          </li>
+        </ul>
+
+        <div class="dropdown dropdown-menu-user">
+          <div class="account-dropdown-button">
+            <a
+              href="#"
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Larissa Pissurno - Conta e Configurações"
+            >
+              <span class="profile-link" role="presentation">
+                <img
+                  class="profile-icon"
+                  src="https://occ-0-2359-185.1.nflxso.net/art/ee3c8/47bd050697b5fd86a1ec241e6829786d498ee3c8.png"
+                  alt=""
+                />
+              </span>
+            </a>
+            <span class="caret" role="presentation"></span>
+          </div>
+          <div class="dropdown-content">
+            <a href="#"
+              ><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a
+            >
+            <a href="#"
+              ><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Minha conta</a
+            >
+          </div>
         </div>
-        <div class="item content">
-            <div class="carousel"></div>
-        </div>        
-        <div class="item footer">
-            <p><i class="fas fa-code"></i> Larissa de Oliveira Pissurno - Web Developer</p>
-            <p><i class="fas fa-paper-plane"></i> larissa.pissurno@db1.com.br</p>
+
+        <div class="dropdown dropdown-menu">
+          <div class="account-dropdown-button">
+            <a
+              href="#"
+              role="button"
+              tabindex="0"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Menu"
+            >
+              <span class="profile-link" role="presentation">
+                <i class="fa fa-bars fa-2x"></i>
+              </span>
+            </a>
+          </div>
+          <div class="dropdown-content">
+            <a class="active" href="#home">Início</a>
+            <a href="#series">Séries</a>
+            <a href="#filmes">Filmes</a>
+            <a href="#favoritos">Favoritos</a>
+            <hr>
+            <a href="#"
+              ><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Logout</a
+            >
+            <a href="#"
+              ><i class="fas fa-user-circle"></i>&nbsp;&nbsp;Minha conta</a
+            >
+          </div>
         </div>
+      </div>
+    </nav>
+
+    <section class="item content">
+      <div class="carousel"></div>
     </section>
 
-    <script src='./assets/libs/carousel/carousel-items.js'></script>
-    <script src='./assets/libs/carousel/carousel.js'></script>
-    <script src='index.js'></script>
-</body>
+    <footer class="item footer">
+      <p>
+        <i class="fas fa-code"></i> Larissa de Oliveira Pissurno - Web Developer
+      </p>
+      <p><i class="fas fa-paper-plane"></i> larissa.pissurno@db1.com.br</p>
+
+      <p>
+        <a href="https://github.com/larissapissurno" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+      </p>
+    </footer>
+
+    <script src="./assets/libs/carousel/carousel-items.js"></script>
+    <script src="./assets/libs/carousel/carousel.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>

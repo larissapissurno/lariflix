@@ -1,4 +1,4 @@
-/* Grid Container */
+/*#region Grid Container*/
 .grid {
   display: grid;
 }
@@ -24,16 +24,18 @@
 .nav {
   grid-area: nav;
   font-size: 0.95rem;
+  text-shadow: 2px 2px 5px #1f1f1f;
 }
 
 .content {
   grid-area: content;
   min-height: 1000px;
   background-image: url(../images/posters/interestelar-cartaz.jpg);
+  background-size: cover;
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: cover;
-  transition: background-image 0.5s ease-in-out;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
 
 .footer {
@@ -42,6 +44,10 @@
   background-color: rgba(46, 46, 46, 1);
   color: #ccc;
   padding: 2rem;
+}
+
+.footer a {
+  color: #ccc;
 }
 
 .grid-template-areas {
@@ -53,7 +59,7 @@
 
 .grid-template-areas-header {
   display: grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 40% 60%;
   grid-template-areas: "logo nav";
   color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -64,7 +70,14 @@
   transition: background-color 0.5s ease;
 }
 
-/* Menu */
+@media (min-width:600px) {
+  .grid-template-areas-header {
+    grid-template-columns: 10% 90%;
+  }
+}
+/*#endregion Grid Container*/
+
+/*#region Menu*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -88,7 +101,102 @@ li a:hover {
   color: #e5e5e5;
 }
 
-/* Estilos Gerais */
+.item .nav ul {
+  display: none;
+}
+/*#endregion Menu*/
+
+/*#region Dropdown menus*/
+.account-menu-item {
+  display: block;
+  position: relative;
+  font-size: 12px;
+  z-index: 0;
+}
+
+.account-dropdown-button .caret {
+  margin-left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #fff transparent transparent transparent;
+}
+
+.dropbtn {
+  color: white;
+  padding: 16px;
+  border: none;
+}
+
+.dropdown {
+  margin-right: 1rem;
+  float: right;
+  margin-top: -3rem;
+}
+
+.dropdown-menu-user {
+  display: none;
+  text-align: initial !important;
+}
+
+.dropdown-menu {
+  margin-top: 1rem !important;
+}
+
+.dropdown-menu a {
+  color: #FFFFFF !important;
+}
+
+.dropdown-menu hr {
+  border: 0.6px solid #3e3e3e;
+}
+
+.dropdown-menu .dropdown-content {
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(46, 46, 46, 1);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 999;
+  right: 1rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  font-size: 14px;
+}
+
+.dropdown-content a {
+  color: #ccc;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgba(0,0,0,0.2);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+@media (min-width:600px) {
+  .dropdown-menu {
+    display: none;
+  }
+
+  .dropdown-menu-user {
+    display: block;
+  }
+
+  .item .nav ul {
+    display: block;
+  }
+}
+
+/*#endregion Dropdown menus*/
+
+/*#region Estilos Gerais*/
 @font-face {
   font-family: "Bebas Neue";
   src: url(../fonts/bebas_neue/BebasNeue-Regular.ttf);
@@ -129,57 +237,4 @@ body > div:nth-of-type(even) {
   margin-right: 1rem;
   cursor: pointer;
 }
-
-.account-menu-item {
-  display: block;
-  position: relative;
-  font-size: 12px;
-  z-index: 0;
-}
-
-.account-dropdown-button .caret {
-  margin-left: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 5px 0 5px;
-  border-color: #fff transparent transparent transparent;
-}
-
-.dropbtn {
-  color: white;
-  padding: 16px;
-  border: none;
-}
-
-.dropdown {
-  margin-right: 1rem;
-  float: right;
-  margin-top: -3rem;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgba(46, 46, 46, 1);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  right: 1rem;
-  border: 1px solid black;
-  border-radius: 0.2rem;
-  font-size: 14px;
-}
-
-.dropdown-content a {
-  color: #ccc;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: rgba(0,0,0,0.2);}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-
+/*#endregion Estilos Gerais*/

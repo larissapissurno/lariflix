@@ -1,138 +1,87 @@
 (function() {
-  'use strict';
+  "use strict";
 
-  window.Carousel = function(config) {
-    this.carousel = document.getElementsByClassName(config.carouselClassName)[0];
-    this.carouselItems = config.carouselItems;
-    this.build();
-  }
-  
-  Carousel.prototype.build = function() {
-    const self = this;
-    self.createArrowLeft();
+  window.Carousel = class Carousel {
+    arrow = { Right: "right", Left: "left" };
+    carouselItemsDiv = null;
 
-    self.insertCarouselItems();
+    constructor(carouselClassName, carouselItems) {
+      this.carousel = document.querySelector(`.${carouselClassName}`);
+      this.carouselItems = carouselItems;
+    }
 
-    self.createArrowRight();
-  }
+    init = () => {
+      this.createArrows();
 
-  Carousel.prototype.createArrowLeft = function() {
-    const arrowLeft = createArrow('left');
-    this.carousel.append(arrowLeft);
+      this.insertCarouselItems();
+    };
 
-    arrowLeft.addEventListener('click', function(e) {
-      const arrowRight = document.getElementById('carousel-arrow-right');
+    createArrows = () => {
+      this.createArrow(this.arrow.Left);
+      this.createArrow(this.arrow.Right);
+    };
 
-      arrowLeft.classList.add('hide');
-      arrowRight.classList.add('hide');
-      scrollTo('first-item');
-      
-      setTimeout(() => {
-        arrowLeft.classList.remove('hide');
-        arrowRight.classList.remove('hide');
+    createArrow = direction => {
+      const arrow = document.createElement("div");
+      arrow.setAttribute("id", `carousel-arrow-${direction}`);
+      arrow.classList.add("carousel-arrow");
+      arrow.classList.add(direction);
 
-        const right = calculateRightPosition();
+      const arrowIcon = document.createElement("i");
+      arrowIcon.classList.add("fa");
+      arrowIcon.classList.add(`fa-angle-${direction}`);
 
-        arrowLeft.setAttribute('style', 'left: 0;');
-        arrowRight.setAttribute('style', `right: ${right}px;`);
+      arrow.append(arrowIcon);
 
-      }, 500);  
-    });
-  }
+      arrow.addEventListener("click", e => this.scrollCarouselTo(direction));
 
-  Carousel.prototype.createArrowRight = function() {
-    const arrowRight = createArrow('right');
-    this.carousel.append(arrowRight);
+      this.carousel.append(arrow);
 
-    arrowRight.addEventListener('click', function(e) {
-      const arrowLeft = document.getElementById('carousel-arrow-left');
-      
-      arrowLeft.classList.add('hide');
-      arrowRight.classList.add('hide');
-      scrollTo('last-item');
+      return arrow;
+    };
 
-      setTimeout(() => {
-        arrowLeft.classList.remove('hide');
-        arrowRight.classList.remove('hide');
-
-        const right = calculateRightPosition();
-        const left = right * -1;
-
-        if (right || left) {
-          arrowRight.setAttribute('style', `right: ${right}px`);
-          arrowLeft.setAttribute('style', `left: ${left}px`);
-        }
-      }, 500);     
-    });
-  }
-
-  Carousel.prototype.insertCarouselItems = function() {
-    const self = this;
-
-    if (!self.carouselItems || !self.carouselItems.length) { return; }
-
-    self.carouselItems.map((item, index) => {
-      const carouselItem = document.createElement('div');
-      let style = `background-image: url(assets/images/posters/${item.url});`;
-      style += 'background-position: center;';
-      style += 'background-repeat: no-repeat;';
-      style += 'background-size: cover;';
-
-      carouselItem.classList.add('carousel-item');
-      carouselItem.setAttribute('style', style);
-
-      if (index === 0) {
-        carouselItem.classList.add('first-item');
+    insertCarouselItems = () => {
+      if (!this.carouselItems || !this.carouselItems.length) {
+        return;
       }
 
-      if (index === (self.carouselItems.length - 1)) {
-        carouselItem.classList.add('last-item');
+      this.carouselItemsDiv = document.createElement("div");
+      this.carouselItemsDiv.classList.add("carousel-items-list");
+
+      this.carouselItems.map((item, index) => {
+        const carouselItem = document.createElement("div");
+        let style = `background-image: url(assets/images/posters/${item.url});`;
+        style += "background-position: center;";
+        style += "background-repeat: no-repeat;";
+        style += "background-size: cover;";
+
+        carouselItem.classList.add("carousel-item");
+        carouselItem.setAttribute("style", style);
+
+        this.carouselItemsDiv.append(carouselItem);
+        this.setClickEventOnCarouselItem(carouselItem, item.url);
+      });
+
+      this.carousel.append(this.carouselItemsDiv);
+    };
+
+    setClickEventOnCarouselItem = (carouselItem, url) => {
+      const content = document.getElementsByClassName("content")[0];
+
+      carouselItem.addEventListener("click", function(e) {
+        content.style.backgroundImage = `url(./assets/images/posters/${url})`;
+      });
+    };
+
+    scrollCarouselTo = direction => {
+      let x = this.carouselItemsDiv.offsetWidth;
+      const y = 0;
+
+      if (direction === this.arrow.Left) {
+        x = this.carouselItemsDiv.offsetWidth * -1;
       }
 
-      self.carousel.append(carouselItem);
-      setClickEventOnCarouselItem(carouselItem, item.url)
-    });
-  }
-
-  function scrollTo(className) {
-    console.log(`scrooling to: ${className}`);
-    
-    var element = document.getElementsByClassName(className)[0];
-    element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-  }
-
-  function calculateRightPosition() {
-    const arrowRight = document.getElementById('carousel-arrow-right');
-
-    var positions = arrowRight.getBoundingClientRect();
-    var currentPosition = +arrowRight.style.right.replace('px','');
-    var parentWidth = arrowRight.parentElement.offsetWidth;
-
-    const right = currentPosition - (parentWidth - positions.right);
-
-    return right;
-  }
-
-  function createArrow(direction) {
-    const arrow = document.createElement('div');
-    arrow.setAttribute('id', `carousel-arrow-${direction}`);
-    arrow.classList.add('carousel-arrow');
-    arrow.classList.add(direction);
-
-    const arrowLeftIcon = document.createElement('i');
-    arrowLeftIcon.classList.add('fa');
-    arrowLeftIcon.classList.add(`fa-arrow-${direction}`);
-    
-    arrow.append(arrowLeftIcon);
-
-    return arrow;
-  }
-
-  function setClickEventOnCarouselItem(carouselItem, url) {
-    const content = document.getElementsByClassName('content')[0];
-
-    carouselItem.addEventListener('click', function(e) {
-      content.style.backgroundImage = `url(./assets/images/posters/${url})`;
-    })
-  }
+      this.carouselItemsDiv.scrollBy(x, y);
+    };
+  };
 })();

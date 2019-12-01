@@ -1,58 +1,62 @@
 /*Casousel*/
 .carousel {
-    height: 180px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.58);
-    position: absolute;
-    bottom: 7rem;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  
-  .carousel-item {
-    height: 170px;
-    width: 180px;
-    background: #fff;
-    display: inline-grid;
-    margin: 5px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.5s ease;
-  }
+  width: 100%;
+}
 
-  .carousel-item:hover {
-    opacity: 1;
-  }
-  
-  .carousel-arrow {
-    color: #fff;
-    position: absolute;
-    background: #000;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 1;
-    transition: opacity 0.1s ease;
-  }
+.carousel-items-list {
+  height: 180px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.58);
+  position: absolute;
+  bottom: 7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
 
-  .carousel-arrow.hide {
-    opacity: 0;
-  }
+.carousel-item {
+  height: 170px;
+  width: 180px;
+  background: #fff;
+  display: inline-grid;
+  margin: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
 
-  .carousel-arrow i {
-    padding: 82px 15px;
-    transition: display 0.5s ease;
-  }
-  
-  .carousel-arrow.left {
-    left: 0;
-    top: 0;
-  }
-  
-  .carousel-arrow.right {
-    right: 0;
-    top: 0;
-  }
+.carousel-item:hover {
+  opacity: 1;
+}
 
-  .display-none {
-    display: none;
-  }
+.carousel-arrow {
+  color: #fff;
+  position: absolute;
+  background: #000;
+  cursor: pointer;
+  z-index: 111;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+  bottom: 7rem;
+}
+
+.carousel-arrow.hide {
+  opacity: 0;
+}
+
+.carousel-arrow i {
+  padding: 82px 15px;
+  transition: display 0.5s ease;
+}
+
+.carousel-arrow.left {
+  left: 0;
+}
+
+.carousel-arrow.right {
+  right: 0;
+}
+
+.display-none {
+  display: none;
+}

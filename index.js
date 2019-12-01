@@ -21,11 +21,8 @@
   }
 
   function initCarousel() {
-    const config = {
-      carouselClassName: 'carousel',
-      carouselItems: window.carouselItems
-    };
-    new Carousel(config);
+    const carousel = new Carousel('carousel', window.carouselItems);
+    carousel.init();
   }
 
   onInit();
